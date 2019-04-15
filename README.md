@@ -9,10 +9,8 @@
         - mirror: http://mirrors.aliyun.com/ubuntu/
 - nodejs8
     - npm
-        - registry: taobao
+        - registry: https://registry.npm.taobao.org
     - pm2
-
-> 为了优化网络请求速度，本容器镜像已将其系统环境中相应的软件源替换为[阿里云镜像](https://mirrors.aliyun.com/about)。
 
 ## 使用说明
 
