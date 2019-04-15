@@ -17,23 +17,21 @@
 执行以下命令，在完成一系列交互操作后，注册一个 gitlab-runner，同时，将配置文件保存到主机 `$(pwd)/config` 目录下：
 
 ```bash
-docker run --rm -it -v $(pwd)/config:/etc/gitlab-runner gitlab/gitlab-runner register
+docker run --rm -it -v $(pwd)/config:/etc/gitlab-runner your-gitlab-runner-image register
 ```
 
 > 这里的用法跟 gitlab-runner 命令一样。
 
 ### 运行 gitlab-runner
 
-这里直接使用 docker-compose 来运行：
+这里直接使用 docker-compose 来运行，以下为最简 demo ：
 
 ```yaml
 version: "3"
 services:
   gitlab-runner:
-    image: gitlab/gitlab-runner
-    container_name: your-gitlab-runner
+    image: your-gitlab-runner-image
     restart: always
-    network_mode: host
     volumes:
       - "./config:/etc/gitlab-runner"
 ```
