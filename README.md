@@ -20,6 +20,8 @@
 docker run --rm -it -v $(pwd)/config:/etc/gitlab-runner gitlab/gitlab-runner register
 ```
 
+> 这里的用法跟 gitlab-runner 命令一样。
+
 ### 运行 gitlab-runner
 
 这里直接使用 docker-compose 来运行：
@@ -57,4 +59,5 @@ before_script:
 ## 参考文档
 
 - [https://docs.gitlab.com/runner/install/docker.html](https://docs.gitlab.com/runner/install/docker.html)
+- [https://docs.gitlab.com/runner/register/index.html](https://docs.gitlab.com/runner/register/index.html)
 - [https://docs.gitlab.com/ee/ci/ssh_keys/](https://docs.gitlab.com/ee/ci/ssh_keys/)
