@@ -1,7 +1,5 @@
 # Gitlab-runner Nodejs 镜像
 
-> 使用基础镜像：[gitlab/gitlab-runner:latest](https://docs.gitlab.com/runner/install/docker.html#docker-images)
-
 ## 环境说明
 
 - ubuntu 16.04
