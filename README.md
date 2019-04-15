@@ -44,7 +44,7 @@ services:
 
 ### 在 gitlab-runner 中使用 ssh keys
 
-> 当前容器镜像暂不支持配置默认 ssh key，目前方案是在 .gitlab-ci.yml 文件中，通过before_script 来动态添加 ssh key。
+当前容器镜像暂不支持配置默认 ssh key，目前方案是在 .gitlab-ci.yml 文件中，通过 before_script 配置项来动态添加 ssh key：
 
 ```yaml
 before_script:
@@ -55,6 +55,8 @@ before_script:
   - chmod 700 ~/.ssh
   - ssh-keyscan "$SSH_KNOWN_HOST"
 ```
+
+> 直接 -v ~/.sss:/home/gitlab-runner/.ssh 方式是不可行的，挂载进去的目录 owner 还是 root（MacOS 是特殊情况）。
 
 ## 参考文档
 
